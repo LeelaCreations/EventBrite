@@ -1,0 +1,63 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29102.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{BBD7E99D-9D99-4DD1-812F-83D2259A55EA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "services", "services", "{35FB28EE-7747-4932-8626-BC3BFBF50B6A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "web", "web", "{084BDE7E-30BB-435F-A4D3-28369C19FCB9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventCatalogAPI", "EventCatalogAPI\EventCatalogAPI.csproj", "{C9B17BCE-65D5-49D7-895C-0D5586EBE9A7}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{9C6ED110-CBDB-4C8B-A208-2ACBA7196033}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebMVC", "WebMVC\WebMVC.csproj", "{763ED60D-E854-47A0-AF49-87B89CA2959D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TokenServiceApi", "TokenServiceApi\TokenServiceApi.csproj", "{10DF8698-193C-4FE5-B939-EF5313093567}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CartApi", "CartApi\CartApi.csproj", "{FEA34FB6-1C9B-4AF5-8C4F-56F65984B1A1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C9B17BCE-65D5-49D7-895C-0D5586EBE9A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9B17BCE-65D5-49D7-895C-0D5586EBE9A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9B17BCE-65D5-49D7-895C-0D5586EBE9A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9B17BCE-65D5-49D7-895C-0D5586EBE9A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C6ED110-CBDB-4C8B-A208-2ACBA7196033}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C6ED110-CBDB-4C8B-A208-2ACBA7196033}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C6ED110-CBDB-4C8B-A208-2ACBA7196033}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C6ED110-CBDB-4C8B-A208-2ACBA7196033}.Release|Any CPU.Build.0 = Release|Any CPU
+		{763ED60D-E854-47A0-AF49-87B89CA2959D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{763ED60D-E854-47A0-AF49-87B89CA2959D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{763ED60D-E854-47A0-AF49-87B89CA2959D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{763ED60D-E854-47A0-AF49-87B89CA2959D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10DF8698-193C-4FE5-B939-EF5313093567}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10DF8698-193C-4FE5-B939-EF5313093567}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10DF8698-193C-4FE5-B939-EF5313093567}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10DF8698-193C-4FE5-B939-EF5313093567}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FEA34FB6-1C9B-4AF5-8C4F-56F65984B1A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEA34FB6-1C9B-4AF5-8C4F-56F65984B1A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEA34FB6-1C9B-4AF5-8C4F-56F65984B1A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEA34FB6-1C9B-4AF5-8C4F-56F65984B1A1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{35FB28EE-7747-4932-8626-BC3BFBF50B6A} = {BBD7E99D-9D99-4DD1-812F-83D2259A55EA}
+		{084BDE7E-30BB-435F-A4D3-28369C19FCB9} = {BBD7E99D-9D99-4DD1-812F-83D2259A55EA}
+		{C9B17BCE-65D5-49D7-895C-0D5586EBE9A7} = {35FB28EE-7747-4932-8626-BC3BFBF50B6A}
+		{763ED60D-E854-47A0-AF49-87B89CA2959D} = {084BDE7E-30BB-435F-A4D3-28369C19FCB9}
+		{10DF8698-193C-4FE5-B939-EF5313093567} = {35FB28EE-7747-4932-8626-BC3BFBF50B6A}
+		{FEA34FB6-1C9B-4AF5-8C4F-56F65984B1A1} = {35FB28EE-7747-4932-8626-BC3BFBF50B6A}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {52EA4407-63AA-4F53-A047-154116DCCD01}
+	EndGlobalSection
+EndGlobal

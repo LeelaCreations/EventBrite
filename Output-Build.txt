@@ -1,0 +1,6 @@
+﻿1>------ Build started: Project: CartApi, Configuration: Debug Any CPU ------
+1>Infrastructure\Filters\AutherizeCheckOperationFilter.cs(16,32,16,77): warning CS0618: 'ApiDescriptionExtensions.ControllerAttributes(ApiDescription)' is obsolete: 'Deprecated: Use TryGetMethodInfo'
+1>Infrastructure\Filters\AutherizeCheckOperationFilter.cs(17,17,17,58): warning CS0618: 'ApiDescriptionExtensions.ActionAttributes(ApiDescription)' is obsolete: 'Deprecated: Use TryGetMethodInfo'
+1>CartApi -> C:\EventBrite_NewDockerized\EventBrite\CartApi\bin\Debug\netcoreapp2.1\CartApi.dll
+1>Done building project "CartApi.csproj".
+========== Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========

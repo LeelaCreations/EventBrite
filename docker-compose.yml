@@ -1,0 +1,104 @@
+version: '3.4'
+
+
+networks:
+  frontend:
+  backend:
+
+
+services:
+  catalog:
+    image: events/catalogapi
+    build:
+      context: .\EventCatalogAPI
+      dockerfile: Dockerfile
+    environment:
+      DatabaseServer: mssqlserver
+      DatabaseName: EventsDB
+      DatabaseUser: sa
+      DatabasePassword: EventsApi(!)
+      ExternalCatalogBaseUrl: http://localhost:9080
+    ports:
+      - "9080:80"
+    container_name: eventcatalogapi
+    networks:
+      - backend
+      - frontend
+    depends_on:
+      - mssqlserver
+
+
+  tokenserver:
+    build:
+      context: .\TokenServiceApi
+      dockerfile: Dockerfile
+    image: events/tokenapi
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      MvcClient: http://localhost:9208
+    ports:
+      - "9070:80"
+    container_name: eventtokenserviceapi
+    networks:
+      - backend
+      - frontend
+    depends_on:
+      - mssqlserver
+
+  cart:
+    image: events/cartapi
+    build:
+      context: .\CartApi
+      dockerfile: Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      IdentityUrl: http://10.0.0.141:9070
+      ConnectionString: basket.data
+    ports:
+      - "9065:80"
+    container_name: eventcartapi
+    networks:
+      - backend
+      - frontend
+    depends_on:
+      - basket.data
+      - tokenserver  
+
+  webmvc:
+    build:
+      context: .\webmvc
+      dockerfile: Dockerfile
+    image: events/webmvc
+    container_name: eventhub
+    environment:
+      CatalogUrl: http://catalog
+      ASPNETCORE_ENVIRONMENT: Development
+      IdentityUrl: http://10.0.0.141:9070
+      CallBackUrl: http://localhost:9208
+      CartUrl: http://cart
+    ports:
+      - "9208:80"
+    networks:
+      - frontend
+    depends_on:
+      - catalog
+      - tokenserver
+      - cart
+
+  mssqlserver:
+    image: "microsoft/mssql-server-linux:latest"
+    environment:
+      ACCEPT_EULA: Y
+      SA_PASSWORD: EventsApi(!)
+    container_name: eventssqlserver
+    ports:
+      - "1450:1433"
+    networks:
+      - backend
+
+  basket.data:
+    image: redis
+    ports:
+      - "9078:6379"
+    networks:
+      - backend
