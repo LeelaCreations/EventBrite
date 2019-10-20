@@ -13,7 +13,7 @@ namespace WebMVC.Controllers
 {
     [Authorize]
     public class CartController : Controller
-    {
+    {//cart controller
         private readonly ICartService _cartService;
         private readonly ICatalogService _catalogService;
         private readonly IIdentityService<ApplicationUser> _identityService;
