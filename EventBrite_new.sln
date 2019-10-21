@@ -19,6 +19,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TokenServiceApi", "TokenSer
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CartApi", "CartApi\CartApi.csproj", "{FEA34FB6-1C9B-4AF5-8C4F-56F65984B1A1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderApi", "OrderApi\OrderApi.csproj", "{99A63B54-658F-4A80-A022-4BED6A8B3741}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{FEA34FB6-1C9B-4AF5-8C4F-56F65984B1A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FEA34FB6-1C9B-4AF5-8C4F-56F65984B1A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FEA34FB6-1C9B-4AF5-8C4F-56F65984B1A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99A63B54-658F-4A80-A022-4BED6A8B3741}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99A63B54-658F-4A80-A022-4BED6A8B3741}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99A63B54-658F-4A80-A022-4BED6A8B3741}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99A63B54-658F-4A80-A022-4BED6A8B3741}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -56,6 +62,7 @@ Global
 		{763ED60D-E854-47A0-AF49-87B89CA2959D} = {084BDE7E-30BB-435F-A4D3-28369C19FCB9}
 		{10DF8698-193C-4FE5-B939-EF5313093567} = {35FB28EE-7747-4932-8626-BC3BFBF50B6A}
 		{FEA34FB6-1C9B-4AF5-8C4F-56F65984B1A1} = {35FB28EE-7747-4932-8626-BC3BFBF50B6A}
+		{99A63B54-658F-4A80-A022-4BED6A8B3741} = {35FB28EE-7747-4932-8626-BC3BFBF50B6A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {52EA4407-63AA-4F53-A047-154116DCCD01}

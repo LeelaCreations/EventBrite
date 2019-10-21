@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using WebMVC.Infrastructure;
 using WebMVC.Models;
 using WebMVC.Models.CartModels;
+using WebMVC.Models.OrderModels;
 
 namespace WebMVC.Services
 {
@@ -108,6 +109,24 @@ namespace WebMVC.Services
             _logger.LogDebug("Clean Basket uri: " + cleanBasketUri);
             var response = await _apiClient.DeleteAsync(cleanBasketUri);
             _logger.LogDebug("Basket cleaned");
+        }
+        public Order MapCartToOrder(Cart cart)
+        {
+            var order = new Order();
+            order.OrderTotal = 0;
+            cart.Events.ForEach(x =>
+            {
+                order.OrderItems.Add(new OrderItem()
+                {
+                    EventId = x.EventId,
+                    PictureUrl = x.PictureUrl,
+                    EventName = x.EventName,
+                    NumberOfTickets = x.NumberOfTickets,
+                    TicketPrice = x.TicketPrice
+                });
+                order.OrderTotal += (x.NumberOfTickets * x.TicketPrice);
+            });
+            return order;
         }
     }
 }
