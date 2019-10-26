@@ -12,7 +12,13 @@ services:
     build:
       context: .\EventCatalogAPI
       dockerfile: Dockerfile
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "200k"
+        max-file: "10"
     environment:
+      ASPNETCORE_ENVIRONMENT: Development
       DatabaseServer: mssqlserver
       DatabaseName: EventsDB
       DatabaseUser: sa
@@ -33,6 +39,11 @@ services:
       context: .\TokenServiceApi
       dockerfile: Dockerfile
     image: events/tokenapi
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "200k"
+        max-file: "10"
     environment:
       ASPNETCORE_ENVIRONMENT: Development
       MvcClient: http://localhost:9208
@@ -50,9 +61,14 @@ services:
     build:
       context: .\CartApi
       dockerfile: Dockerfile
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "200k"
+        max-file: "10"
     environment:
       ASPNETCORE_ENVIRONMENT: Development
-      IdentityUrl: http://10.0.0.141:9070
+      IdentityUrl: http://192.168.3.131:9070
       ConnectionString: basket.data
     ports:
       - "9065:80"
@@ -69,14 +85,19 @@ services:
       context: .\OrderApi
       dockerfile: Dockerfile
     image: events/orderapi
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "200k"
+        max-file: "10"
     environment:
       ASPNETCORE_ENVIRONMENT: Development
-      IdentityUrl: http://10.0.0.141:9070
+      IdentityUrl: http://192.168.3.131:9070
       SQLSERVER_HOST: mssqlserver
       SA_PASSWORD: EventsApi(!)
       DATABASE: EventOrdersDb
     ports:
-      - "6085:80"
+      - "6095:80"
     container_name: eventorderapi
     networks:
       - backend
@@ -92,10 +113,15 @@ services:
       dockerfile: Dockerfile
     image: events/webmvc
     container_name: eventhub
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "200k"
+        max-file: "10"
     environment:
       CatalogUrl: http://catalog
       ASPNETCORE_ENVIRONMENT: Development
-      IdentityUrl: http://10.0.0.141:9070
+      IdentityUrl: http://192.168.3.131:9070
       CallBackUrl: http://localhost:9208
       CartUrl: http://cart
       OrderUrl: http://order
@@ -131,7 +157,7 @@ services:
 
   rabbitmq:
     image: rabbitmq:3-management
-    container_name: rabbitmq
+    container_name: eventrabbitmq
     hostname: myrabbitmq
     ports:
       - "15677:15672"

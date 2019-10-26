@@ -90,7 +90,7 @@ namespace WebMVC.Controllers
                         //_logger.LogDebug("User {userName} started order processing", user.UserName);
                         int orderId = await _orderSvc.CreateOrder(order);
                         //_logger.LogDebug("User {userName} finished order processing  of {orderId}.", order.UserName, order.OrderId);
-                        await _cartSvc.ClearCart(user);
+                        //await _cartSvc.ClearCart(user);
                         return RedirectToAction("Complete", new { id = orderId, userName = user.UserName });
                     }
 
